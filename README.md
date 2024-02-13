@@ -1,15 +1,16 @@
 # smart_save
 
-A new Flutter project.
+My first demo finTech App.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is my very first flutter project and I would like to document my journey.
 
-A few resources to get you started if this is your first Flutter project:
+A few things I started out with:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### I have found a way to change the app launcher both on android and on the web version.
+- That of android was done using the flutter_launcher_icons in pubspec.yaml.
+- The web version was done directly from the index.html file.
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

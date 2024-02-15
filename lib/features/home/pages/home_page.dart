@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_save/account_view.dart';
-import 'package:smart_save/home_view.dart';
-import 'package:smart_save/invest_view.dart';
-import 'package:smart_save/savings_view.dart';
+import 'package:smart_save/features/invest/pages/invest_view.dart';
+import 'package:smart_save/features/savings/pages/savings_view.dart';
+import '../../account/account_view.dart';
+import 'home_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,16 +24,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Smart Save App"),
-      ),
       body: listOfPages[selectedIndex],
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepOrange,
-        hoverColor: Colors.deepPurple,
-        onPressed: (){},
-        child: Icon(Icons.add, color: Colors.white38,),
-      ),
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         unselectedItemColor: Colors.deepOrange,

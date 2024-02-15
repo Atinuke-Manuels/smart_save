@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_save/home_page.dart';
+import 'package:smart_save/features/home/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());

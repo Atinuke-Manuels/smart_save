@@ -6,7 +6,7 @@ My first demo finTech App.
 
 This project is my very first flutter project and I would like to document my journey.
 
-A few things I started out with:
+## A few things I started out with:
 
 ### I have found a way to change the app launcher both on android and on the web version.
 - That of android was done using the flutter_launcher_icons in pubspec.yaml.

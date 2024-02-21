@@ -39,8 +39,8 @@ class SavingsDetailsCard extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("View savings",),
-                    Icon(Icons.arrow_forward)
+                    Text("View savings", style: TextStyle(color: Colors.deepOrangeAccent),),
+                    Icon(Icons.arrow_forward, color: Colors.deepOrangeAccent,)
                   ],
                 ),
                 style: ElevatedButton.styleFrom(

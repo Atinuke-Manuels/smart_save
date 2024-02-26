@@ -1,41 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:smart_save/features/home/widgets/vetted_opportunities_item.dart';
 
-class VettedOpportunitiesSection extends StatefulWidget {
-  VettedOpportunitiesSection({Key? key}) : super(key: key);
+class MoneyTalksSection  extends StatefulWidget {
+  MoneyTalksSection ({Key? key}) : super(key: key);
 
   @override
-  _VettedOpportunitiesSectionState createState() =>
-      _VettedOpportunitiesSectionState();
+  _MoneyTalksSectionState createState() =>
+      _MoneyTalksSectionState();
 }
 
-class _VettedOpportunitiesSectionState
-    extends State<VettedOpportunitiesSection> {
+class _MoneyTalksSectionState
+    extends State<MoneyTalksSection > {
   final List<Map<String, String>> opportunitiesData = [
     {
-      "vettedImg": "assets/vetted_images/vetted2.jpg",
-      "title": "CORPORATE DEBT",
-      "subTitle": "10% returns in 1 year"
+      "moneyImg": "assets/money_talks_images/money10.jpg",
+      "title": "Meet Muyiwa",
+      "subTitle": "He is still trying to figure out what to do"
     },
     {
-      "vettedImg": "assets/vetted_images/vetted3.jpg",
-      "title": "LIFE CHANGING OPPORTUNITIES",
-      "subTitle": "15% returns in 1 year"
+      "moneyImg": "assets/money_talks_images/money11.jpg",
+      "title": "My money mistakes",
+      "subTitle": "Invest now before you spend it all"
     },
     {
-      "vettedImg": "assets/vetted_images/vetted4.jpg",
-      "title": "BEST DEALS EVER",
-      "subTitle": "25% returns in 1 year"
+      "moneyImg": "assets/money_talks_images/money12.jpg",
+      "title": "This is the deal",
+      "subTitle": "The real deal of the year is finally here"
     },
     {
-      "vettedImg": "assets/vetted_images/vetted5.png",
-      "title": "EXCITING CORPORATE DEALS",
-      "subTitle": "5% returns in 1 year"
+      "moneyImg": "assets/money_talks_images/money13.jpg",
+      "title": "We asked",
+      "subTitle": "Your response was well received"
     },
     {
-      "vettedImg": "assets/vetted_images/vetted6.png",
+      "moneyImg": "assets/money_talks_images/money14.jpg",
       "title": "WITH US TRUST IS NOT AN ISSUE",
       "subTitle": "18% returns in 1 year"
+    },
+    {
+      "moneyImg": "assets/money_talks_images/money15.jpg",
+      "title": "Life changing opportunities",
+      "subTitle": "15% returns in 1 year"
     },
   ];
 
@@ -67,7 +72,7 @@ class _VettedOpportunitiesSectionState
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Vetted Opportunities",
+                "Money Talks",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.black38,
@@ -78,15 +83,15 @@ class _VettedOpportunitiesSectionState
                 child: Row(
                   children: [
                     Text(
-                      "Find More",
+                      "View Blog",
                       style: TextStyle(
-                          color: Colors.purple.shade800,
+                          color: Colors.deepOrange.shade800,
                           fontWeight: FontWeight.w800),
                     ),
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
-                      color: Colors.purple.shade800,
+                      color: Colors.deepOrange.shade800,
                     )
                   ],
                 ),
@@ -102,7 +107,7 @@ class _VettedOpportunitiesSectionState
               itemCount: opportunitiesData.length,
               itemBuilder: (BuildContext context, int index) {
                 return VettedOpportunitiesItem(
-                  vettedImg: opportunitiesData[index]["vettedImg"]!,
+                  vettedImg: opportunitiesData[index]["moneyImg"]!,
                   title: opportunitiesData[index]["title"]!,
                   titleStyle: TextStyle(
                       fontWeight: FontWeight.bold,

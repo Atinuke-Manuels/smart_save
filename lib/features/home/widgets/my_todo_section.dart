@@ -1,4 +1,4 @@
-import  'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import 'my_todo_item.dart';
 
@@ -17,51 +17,55 @@ class MyTODOSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("My To-do",
+              Text(
+                "My To-do",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.black38,
                 ),
               ),
               TextButton(
-                  onPressed: () {} ,
+                  onPressed: () {},
                   child: Row(
                     children: [
-                      Text("Hide", style: TextStyle(color: Colors.red.shade400),),
+                      Text(
+                        "Hide",
+                        style: TextStyle(color: Colors.red.shade400),
+                      ),
                       Icon(
-                          Icons.arrow_forward_ios,
-                          size: 18,
-                          color: Colors.red.shade400,
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Colors.red.shade400,
                       )
                     ],
-                  )
-              ),
+                  )),
             ],
           ),
           SizedBox(
-              height: MediaQuery.of(context).size.height * 0.18,
+            // height: MediaQuery.of(context).size.height * 0.18,
+            height: 128,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
                 MyTODOItem(
                   title: "Add Debit Card",
                   progress: 0.0,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 MyTODOItem(
                   title: "Link your BVN",
                   progress: 0.3,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 MyTODOItem(
                   title: "Dollar Account",
                   progress: 0.6,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 MyTODOItem(
                   title: "Seed Account",
                   progress: 0.9,
-                  onPressed: (){},
+                  onPressed: () {},
                 )
               ],
             ),

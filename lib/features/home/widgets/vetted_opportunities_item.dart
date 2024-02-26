@@ -26,17 +26,28 @@ class VettedOpportunitiesItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(8.0), // Set your desired border radius
-            child: Image.asset(vettedImg,
+            borderRadius: BorderRadius.circular(8.0),
+            // Set your desired border radius
+            child: Image.asset(
+              vettedImg,
               width: MediaQuery.of(context).size.width * 0.42,
-              height: MediaQuery.of(context).size.height * 0.22,
+              // height: MediaQuery.of(context).size.height * 0.22,
+              height: 160,
               alignment: Alignment.topLeft,
               fit: BoxFit.cover, // Optional: Adjust the fit as per your design
             ),
           ),
-          SizedBox(height: 8,),
-          Text(title, style: titleStyle,),
-          Text(subTitle, style: subTitleStyle,)
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            title,
+            style: titleStyle,
+          ),
+          Text(
+            subTitle,
+            style: subTitleStyle,
+          )
         ],
       ),
     );

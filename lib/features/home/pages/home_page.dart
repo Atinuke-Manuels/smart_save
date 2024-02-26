@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_save/features/invest/pages/invest_view.dart';
 import 'package:smart_save/features/savings/pages/savings_view.dart';
-import '../../account/account_view.dart';
+import '../../account/pages/account_view.dart';
 import 'home_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,14 +25,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: listOfPages[selectedIndex],
-
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         unselectedItemColor: Colors.deepOrange,
         selectedItemColor: Colors.deepPurple,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        onTap: (value){
+        onTap: (value) {
           setState(() {
             selectedIndex = value;
           });
@@ -40,8 +39,10 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.savings), label: "Save"),
-          BottomNavigationBarItem(icon: Icon(Icons.rocket_launch), label: "Invest"),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: "Profile")
+          BottomNavigationBarItem(
+              icon: Icon(Icons.rocket_launch), label: "Invest"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_pin_circle_outlined), label: "Account")
         ],
       ),
     );

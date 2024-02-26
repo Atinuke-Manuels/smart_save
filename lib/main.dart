@@ -1,6 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_save/features/home/pages/home_page.dart';
+import 'package:smart_save/features/invest/pages/invest_view.dart';
+import 'package:smart_save/features/savings/pages/savings_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +25,13 @@ class MyApp extends StatelessWidget {
         splash: Image.asset('assets/logo.png'),
         duration: 3000,
         splashTransition: SplashTransition.rotationTransition,
-        backgroundColor: Color(0xD1A1DEFF),
+        backgroundColor: Colors.deepPurple,
         nextScreen: HomePage(),
       ),
+        routes: {
+        '/SavingsPage': (context) => const SavingsView(),
+          '/InvestmentPage': (context) => const InvestView(),
+        }
     );
   }
 }

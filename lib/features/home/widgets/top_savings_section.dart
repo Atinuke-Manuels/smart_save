@@ -6,7 +6,6 @@ class TopSavingsSection extends StatelessWidget {
     super.key,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,20 +20,19 @@ class TopSavingsSection extends StatelessWidget {
         children: [
           Text(
             "Top Savings",
-            style: TextStyle(
-                fontSize: 16,
-                color: Colors.black38
-            ),
+            style: TextStyle(fontSize: 16, color: Colors.black38),
           ),
           TopSavingsItem(
-            leading: Image.asset("assets/images/shield.png",),
+            leading: Image.asset(
+              "assets/images/shield.png",
+            ),
             title: "Piggybank",
             subtitle: "Auto save: Daily weekly or monthly",
             onPress: () {},
             child: "SAVE",
             titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
             subTextStyle: TextStyle(color: Colors.grey.shade500),
-            ),
+          ),
           TopSavingsItem(
             leading: Image.asset("assets/images/lock.png"),
             title: "SafeLock",
@@ -58,4 +56,3 @@ class TopSavingsSection extends StatelessWidget {
     );
   }
 }
-

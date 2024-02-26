@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class MyTODOItem extends StatelessWidget {
@@ -21,22 +19,29 @@ class MyTODOItem extends StatelessWidget {
       padding: EdgeInsets.all(8),
       margin: EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8),
         color: Colors.white,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
-          LinearProgressIndicator( value: progress,),
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          LinearProgressIndicator(
+            value: progress,
+          ),
           IconButton(
               onPressed: onPressed,
-              icon: Icon(Icons.arrow_forward_ios, size: 16,),
+              icon: Icon(
+                Icons.arrow_forward_ios,
+                size: 16,
+              ),
               style: IconButton.styleFrom(
                 backgroundColor: Colors.grey.shade300,
-              )
-          )
+              ))
         ],
       ),
     );

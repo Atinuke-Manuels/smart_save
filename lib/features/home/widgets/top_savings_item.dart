@@ -24,8 +24,14 @@ class TopSavingsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: leading,
-      title: Text(title, style: titleTextStyle,),
-      subtitle: Text(subtitle, style: subTextStyle,),
+      title: Text(
+        title,
+        style: titleTextStyle,
+      ),
+      subtitle: Text(
+        subtitle,
+        style: subTextStyle,
+      ),
       trailing: ElevatedButton(
         onPressed: onPress,
         child: Text(child),

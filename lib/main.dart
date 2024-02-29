@@ -4,9 +4,18 @@ import 'package:smart_save/features/home/pages/home_page.dart';
 import 'package:smart_save/features/invest/pages/invest_view.dart';
 import 'package:smart_save/features/savings/pages/savings_view.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

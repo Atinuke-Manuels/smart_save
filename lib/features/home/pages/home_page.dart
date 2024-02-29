@@ -24,7 +24,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: listOfPages[selectedIndex],
+      body: IndexedStack(     // indexedStack helps to avoid rebuilding the UI over and over again. It builds it just once.
+        children: listOfPages,
+        index: selectedIndex,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         unselectedItemColor: Colors.deepOrange,

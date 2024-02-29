@@ -8,7 +8,7 @@ class InvestDetailsCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.deepPurple,
+        color: Colors.deepPurple.shade400,
         borderRadius: BorderRadius.circular(8)
       ),
       child: Column(

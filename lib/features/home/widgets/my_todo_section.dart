@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'hide_todo_list.dart';
 import 'my_todo_item.dart';
 
 class MyTODOSection extends StatelessWidget {
@@ -25,13 +26,22 @@ class MyTODOSection extends StatelessWidget {
                 ),
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        showDragHandle: true,
+                        builder: (context){
+                          return HideToDOList();
+                        }
+                    );
+                  },
                   child: Row(
                     children: [
                       Text(
                         "Hide",
                         style: TextStyle(color: Colors.red.shade400),
                       ),
+                      SizedBox(width: 8,),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
@@ -75,3 +85,4 @@ class MyTODOSection extends StatelessWidget {
     );
   }
 }
+

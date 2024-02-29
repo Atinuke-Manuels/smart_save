@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_save/features/home/widgets/vetted_opportunities_item.dart';
+import 'package:smart_save/features/invest/widgets/explore_investment.dart';
 
 class VettedOpportunitiesSection extends StatefulWidget {
   VettedOpportunitiesSection({Key? key}) : super(key: key);
@@ -74,7 +75,15 @@ class _VettedOpportunitiesSectionState
                 ),
               ),
               TextButton(
-                onPressed: scrollToNextItem,
+                // onPressed: scrollToNextItem,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context){
+                        return ExploreInvestment();
+                      })
+                  );
+                },
                 child: Row(
                   children: [
                     Text(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils.dart';
+
 class InvestDetailsCard extends StatelessWidget {
   const InvestDetailsCard({super.key});
 
@@ -22,7 +24,7 @@ class InvestDetailsCard extends StatelessWidget {
           SizedBox(height: 12,),
           Text("Total Investment", style: TextStyle(color: Colors.white)),
           SizedBox(height: 4,),
-          Text("NGN0", style: TextStyle(color: Colors.white),)
+          Text('${getNaira()}50000', style: TextStyle(color: Colors.white),)
         ],
       ),
     );

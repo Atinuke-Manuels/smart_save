@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_save/features/home/block/home_bloc.dart';
 
 class HideToDOList extends StatelessWidget {
   const HideToDOList({
@@ -37,7 +39,10 @@ class HideToDOList extends StatelessWidget {
                         content: Text("Are you sure you want to hide your To-Do List till tomorrow?"),
                         actions: [
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                                context.read<HomeBloc>().hideTodoList();
+                              },
                               child: Text("Yes remove it")
                           ),
                           TextButton(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_save/features/login/widgets/button_item.dart';
 import 'package:smart_save/features/savings/widgets/choose_a_wallet_section.dart';
 
 class QuickSavePage extends StatefulWidget {
@@ -69,14 +70,8 @@ class _QuickSavePageState extends State<QuickSavePage> {
             keyboardType: TextInputType.numberWithOptions(decimal: true),
           ),
           amount.isEmpty ? SizedBox() : ChooseAWalletSection(),
-          ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  backgroundColor: Colors.deepPurple,
-                  foregroundColor: Colors.orange),
-              child: Text("Quick Save"))
+          ButtonItem(
+              title: "Quick Save", onPress: () {}, buttonWidth: MediaQuery.of(context).size.width * 0.95)
         ],
       ),
     );

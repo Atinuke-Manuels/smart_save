@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_save/features/home/block/home_bloc.dart';
+import 'package:smart_save/features/home/block/home_state.dart';
 import 'package:smart_save/features/invest/pages/invest_view.dart';
 import 'package:smart_save/features/savings/pages/savings_view.dart';
 import '../../account/pages/account_view.dart';
@@ -23,6 +26,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    HomeBloc homeBloc = context.watch<HomeBloc>();
+    HomeState homeState = homeBloc.state;
+    var selectedIndex = homeState.tabIndex;
+
     return Scaffold(
       body: IndexedStack(     // indexedStack helps to avoid rebuilding the UI over and over again. It builds it just once.
         children: listOfPages,
@@ -36,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         showUnselectedLabels: true,
         onTap: (value) {
           setState(() {
-            selectedIndex = value;
+            homeBloc.updateTabIndex(value);
           });
         },
         items: const [

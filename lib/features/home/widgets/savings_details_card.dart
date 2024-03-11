@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_save/utils.dart';
+
+import '../block/home_bloc.dart';
+
 
 class SavingsDetailsCard extends StatelessWidget {
   const SavingsDetailsCard({
@@ -13,9 +18,12 @@ class SavingsDetailsCard extends StatelessWidget {
   final Widget topRightWidget;
   final Widget balance;
   final Function()? onPress;
-
+  
+  
   @override
   Widget build(BuildContext context) {
+    HomeBloc homeBloc = context.watch<HomeBloc>();
+    
     return GestureDetector(
       onTap: onPress,
       child: Container(
@@ -30,7 +38,8 @@ class SavingsDetailsCard extends StatelessWidget {
         child: Stack(
           children: [
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+              },
               icon: Icon(Icons.add),
               label: Text("Quick save"),
               style: ElevatedButton.styleFrom(
@@ -51,7 +60,10 @@ class SavingsDetailsCard extends StatelessWidget {
               bottom: 0,
               left: 0,
               child: Column(
-                children: [bottomLeftWidget, balance],
+                children: [
+                  bottomLeftWidget,
+                  balance,
+                ],
               ),
             )
           ],

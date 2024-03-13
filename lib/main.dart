@@ -11,6 +11,7 @@ import 'package:smart_save/features/savings/pages/savings_view.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:smart_save/features/signup/pages/signup_page.dart';
+import 'features/account/account_cubit.dart';
 import 'firebase_options.dart';
 
 void main() async{
@@ -30,8 +31,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) {return HomeBloc();},
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<HomeBloc>(
+          create: (BuildContext context) => HomeBloc(),
+        ),
+        BlocProvider<AccountBloc>(
+          create: (BuildContext context) => AccountBloc(),
+        ),
+        // Add more BlocProviders as needed
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

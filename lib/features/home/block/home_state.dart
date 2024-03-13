@@ -25,7 +25,7 @@ class HomeState extends Equatable {
 
 
 
-//
+
 // import 'package:equatable/equatable.dart';
 //
 // class HomeState extends Equatable{

@@ -50,7 +50,7 @@ class MyTODOSection extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                        Text(homeBloc.state.hideTodo ? 'Show' : "Hide",
+                        Text(homeBloc.state.hideTodo ? 'Show List' : "Hide",
                         style: homeBloc.state.hideTodo ? TextStyle(color: Colors.purple.shade400) : TextStyle(color: Colors.red.shade400),
                       ),
                       SizedBox(width: 8,),

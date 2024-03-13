@@ -9,6 +9,8 @@ class AccountSettings1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -40,7 +42,7 @@ class AccountSettings1 extends StatelessWidget {
           ),
           AccountSettingsItem(
             leadingIcons: Icon(Icons.swap_horiz),
-            title: "Generate Account Statement",
+            title: "Change Theme",
             trailingIcons: Switch(
               value: false,
               onChanged: (value) {},

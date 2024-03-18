@@ -10,6 +10,7 @@ import 'package:smart_save/features/savings/model/strict_savings_model.dart';
 import 'package:smart_save/features/savings/pages/savings_view.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:smart_save/features/signup/bloc/signUp_bloc.dart';
 import 'package:smart_save/features/signup/pages/signup_page.dart';
 import 'features/account/account_cubit.dart';
 import 'firebase_options.dart';
@@ -38,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<AccountBloc>(
           create: (BuildContext context) => AccountBloc(),
+        ),
+        BlocProvider<SignupBloc>(
+          create: (BuildContext context) => SignupBloc(),
         ),
         // Add more BlocProviders as needed
       ],

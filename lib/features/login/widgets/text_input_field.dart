@@ -7,7 +7,7 @@ class TextInputField extends StatelessWidget {
     required this.hint,
     required this.leading,
     this.trailing,
-    required  this.keyboardType,
+    required this.keyboardType,
     this.obscure,
     this.controller,
   });
@@ -22,8 +22,6 @@ class TextInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TextEditingController controller = TextEditingController(); // Add a TextEditingController
-
     return Container(
       decoration: BoxDecoration(
         color: Colors.grey.shade100,

@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../login/widgets/button_item.dart';
 
 class SignUpBottomSection extends StatelessWidget {
   const SignUpBottomSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       child: Column(
         children: [
-          ButtonItem(
-              title: "SIGN UP",
-              onPress: () {
-
-              },
-              buttonWidth: MediaQuery.of(context).size.width * 0.95),
           SizedBox(height: 20,),
           Container(
             width: MediaQuery.of(context).size.width * 0.6,
@@ -72,4 +67,9 @@ class SignUpBottomSection extends StatelessWidget {
       ),
     );
   }
+}
+
+
+bool _isUserInputValid(){
+  return true;
 }

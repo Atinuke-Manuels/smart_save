@@ -12,12 +12,6 @@ class LoginBottomSection extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          ButtonItem(
-              title: "LOG IN",
-              onPress: () {
-                Navigator.pushNamed(context, '/HomePage');
-              },
-              buttonWidth: MediaQuery.of(context).size.width * 0.95),
           SizedBox(height: 20,),
           Container(
             width: MediaQuery.of(context).size.width * 0.6,

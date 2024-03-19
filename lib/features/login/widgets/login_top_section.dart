@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_save/features/home/pages/home_view.dart';
 import 'package:smart_save/features/login/widgets/text_input_field.dart';
+
+import '../../signup/bloc/signUp_bloc.dart';
+import '../../signup/repository/signup_repository.dart';
+import 'button_item.dart';
 
 
 class LoginTopSection extends StatefulWidget {
   const LoginTopSection({
     super.key,
+
   });
+
 
   @override
   State<LoginTopSection> createState() => _LoginTopSectionState();
@@ -21,6 +29,8 @@ class _LoginTopSectionState extends State<LoginTopSection> {
 
   @override
   Widget build(BuildContext context) {
+    final SignupBloc bloc = BlocProvider.of<SignupBloc>(context);
+
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -101,8 +111,44 @@ class _LoginTopSectionState extends State<LoginTopSection> {
           SizedBox(
             height: 40,
           ),
+          ButtonItem(
+            title: "LOG IN",
+            onPress: () {
+              if (_isCurrentUserValid()) {
+                bloc.loginUser(
+                  emailAddress: emailAddressController.text,
+                  password: passwordController.text,
+                ).then((value) {
+                  if (value) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return HomeView();
+                      }),
+                    );
+                  }
+                });
+              }
+            },
+            buttonWidth: MediaQuery.of(context).size.width * 0.95,
+          ),
         ],
       ),
     );
+  }
+  bool _isCurrentUserValid() {
+    final email = emailAddressController.text.trim();
+    final password = passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Email and password cannot be empty")),
+      );
+      return false;
+    }
+
+    // Additional validation logic, if needed.
+
+    return true;
   }
 }

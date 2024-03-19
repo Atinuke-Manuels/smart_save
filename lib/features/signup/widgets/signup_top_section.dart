@@ -126,15 +126,16 @@ class _SignUpTopSection extends State<SignUpTopSection> {
                         userName: userNameController.text,
                         emailAddress: emailAddressController.text,
                         password: passwordController.text,
-                      );
-                      if(state is SignupSuccessful){
-                        Navigator.push(
+                      ).then((value) {
+                        if (value) {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) {
                               return LoginPage();
-                            },)
-                        );
-                      }
+                            }),
+                          );
+                        }
+                      });
                     }
                   },
                   buttonWidth: MediaQuery.of(context).size.width * 0.95,

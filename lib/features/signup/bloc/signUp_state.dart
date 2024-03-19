@@ -15,19 +15,16 @@ class SignupState extends Equatable {
   final String password;
   final SignupStatus signupStatus;
 
-  static SignupState empty = SignupState(
-      userName: "",
-      emailAddress: "",
-      password: ""
-  );
+  static SignupState empty =
+      SignupState(userName: "", emailAddress: "", password: "");
 
   @override
   List<Object?> get props => [
-    userName,
-    emailAddress,
-    password,
-    signupStatus,
-  ];
+        userName,
+        emailAddress,
+        password,
+        signupStatus,
+      ];
 
   SignupState copyWith({
     String? userName,
@@ -50,11 +47,11 @@ class SignupInitial extends SignupState {
     required String emailAddress,
     required String password,
   }) : super(
-    userName: userName,
-    emailAddress: emailAddress,
-    password: password,
-    signupStatus: SignupStatus.Initial,
-  );
+          userName: userName,
+          emailAddress: emailAddress,
+          password: password,
+          signupStatus: SignupStatus.Initial,
+        );
 }
 
 class SignupProcessing extends SignupState {
@@ -63,11 +60,11 @@ class SignupProcessing extends SignupState {
     required String emailAddress,
     required String password,
   }) : super(
-    userName: userName,
-    emailAddress: emailAddress,
-    password: password,
-    signupStatus: SignupStatus.Processing,
-  );
+          userName: userName,
+          emailAddress: emailAddress,
+          password: password,
+          signupStatus: SignupStatus.Processing,
+        );
 }
 
 class SignupSuccessful extends SignupState {
@@ -75,10 +72,11 @@ class SignupSuccessful extends SignupState {
     required String userName,
     required String emailAddress,
   }) : super(
-    userName: userName,emailAddress: emailAddress,
-    password: '',
-    signupStatus: SignupStatus.Successful,
-  );
+          userName: userName,
+          emailAddress: emailAddress,
+          password: '',
+          signupStatus: SignupStatus.Successful,
+        );
 }
 
 class SignupError extends SignupState {
@@ -90,9 +88,9 @@ class SignupError extends SignupState {
     required String password,
     required this.errorMessage,
   }) : super(
-    userName: userName,
-    emailAddress: emailAddress,
-    password: password,
-    signupStatus: SignupStatus.Error,
-  );
+          userName: userName,
+          emailAddress: emailAddress,
+          password: password,
+          signupStatus: SignupStatus.Error,
+        );
 }
